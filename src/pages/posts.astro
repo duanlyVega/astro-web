@@ -1,0 +1,13 @@
+---
+import Layout from "../components/Layout.astro";
+
+const res = await fetch("https://jsonplaceholder.typicode.com/users")
+const data = await res.json()
+console.log(data)
+
+---
+
+<Layout lang="es" title="Astro Posts">
+    <h1>Posts</h1>
+    <div>{JSON.stringify(data) ? JSON.stringify(data): "nada"}</div>
+</Layout>
